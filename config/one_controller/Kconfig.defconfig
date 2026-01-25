@@ -1,0 +1,6 @@
+if SHIELD_ONE_CONTROLLER
+
+config ZMK_KEYBOARD_NAME
+    default "manuform"
+
+endif # SHIELD_ONE_CONTROLLER
