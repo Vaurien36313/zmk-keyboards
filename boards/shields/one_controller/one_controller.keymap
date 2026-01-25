@@ -1,13 +1,52 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 / {
     keymap {
         compatible = "zmk,keymap";
 
+        /* =====================
+         * BASE / QWERTY (0)
+         * ===================== */
         default_layer {
-            display-name="default layer";
-            bindings  = <
-                &kp Q &kp W &kp E &kp R
+            bindings = <
+                ESC   N1    N2    N3    N4    N5        N6    N7    N8    N9    N0    MINUS
+                LALT  Q     W     E     R     T         Y     U     I     O     P     LBKT
+                CAPS  A     S     D     F     G         H     J     K     L     SEMI  SQT
+                TAB   Z     X     C     V     B         N     M     COMMA DOT   SLASH BSLH
+                            VOLD  VOLU                              MPLY  MNXT
+                                 LGUI  BSPC           SPACE KP_ENTER
+                                 &mo 1 LALT           LCTRL LSHFT
+                                 LCTRL LSHFT          DEL   &mo 2
+            >;
+        };
+
+        /* =====================
+         * LEFT (1)
+         * ===================== */
+        left_layer {
+            bindings = <
+                F12   F1    F2    F3    F4    F5            TRANS TRANS TRANS TRANS TRANS TRANS
+                TRANS TRANS TRANS UP    TRANS F18           TRANS TRANS TRANS TRANS TRANS TRANS
+                GRAVE PAUSE LEFT  DOWN  RIGHT TRANS         TRANS TRANS TRANS TRANS TRANS TRANS
+                SPACE BRID  BRIU  CALC  PSCR  NON_US_BSLH   TRANS TRANS TRANS TRANS TRANS TRANS
+                            MUTE  TRANS                                 TRANS TRANS
+                                   TRANS DEL                TRANS TRANS
+                                   TRANS TRANS              TRANS TRANS
+                                   TRANS TRANS              TRANS TRANS
+            >;
+        };
+
+        /* =====================
+         * RIGHT (2)
+         * ===================== */
+        right_layer {
+            bindings = <
+                TRANS TRANS TRANS TRANS TRANS TRANS      F6         F7   F8   F9   F10   F11
+                TRANS TRANS TRANS TRANS TRANS TRANS      KP_SLASH   KP_7 KP_8 KP_9 EQUAL RBKT
+                TRANS TRANS TRANS TRANS TRANS TRANS      KP_MULT    KP_4 KP_5 KP_6 NUM   SQT
+                TRANS TRANS TRANS TRANS TRANS TRANS      KP_MINUS   KP_1 KP_2 KP_3 TRANS BSLH
+                            TRANS TRANS                                  MPRV  TRANS
+                                   TRANS TRANS           KP_PLUS TRANS
+                                   TRANS TRANS           KP_0    TRANS
+                                   TRANS TRANS           KP_DOT  TRANS
             >;
         };
     };
