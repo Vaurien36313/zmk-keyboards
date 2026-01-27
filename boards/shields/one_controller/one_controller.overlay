@@ -10,7 +10,7 @@
     /* Matrix scan (6x12), diode direction COL2ROW */
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "row2col";
+        diode-direction = "col2row";
         wakeup-source;
 
         /* Columns are outputs for col2row */
