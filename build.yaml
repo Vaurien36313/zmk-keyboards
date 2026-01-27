@@ -22,3 +22,4 @@ include:
     shield: one_controller
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -ONFIG_ZMK_STUDIO_LOCKING=n

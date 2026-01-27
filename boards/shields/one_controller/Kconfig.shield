@@ -1,4 +1,3 @@
 config SHIELD_ONE_CONTROLLER
     def_bool $(shields_list_contains,one_controller)
-    &studio_unlock
-r
+    
