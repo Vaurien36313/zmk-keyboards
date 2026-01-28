@@ -15,8 +15,8 @@
 
         /* Columns are outputs for col2row */
 col-gpios = <
-    &gpio1 0  GPIO_ACTIVE_HIGH  /* P1.00 */
     &gpio0 11 GPIO_ACTIVE_HIGH  /* P0.11 */
+    &gpio1 0  GPIO_ACTIVE_HIGH  /* P1.00 */
     &gpio1 4  GPIO_ACTIVE_HIGH  /* P1.04 */
     &gpio1 6  GPIO_ACTIVE_HIGH  /* P1.06  (MOVED: was P0.24) */
     &gpio0 29 GPIO_ACTIVE_HIGH  /* P0.29 */
@@ -40,8 +40,8 @@ row-gpios = <
 >;
 
         /* QMK DEBOUNCE 5ms -> ZMK per-driver debounce */
-        debounce-press-ms = <10>;
-        debounce-release-ms = <10>;
+        debounce-press-ms = <50>;
+        debounce-release-ms = <50>;
     };
 
     /*
@@ -56,25 +56,19 @@ row-gpios = <
         columns = <12>;
         map = <
             /* LEFT MAIN GRID: rows 0-1, cols 0-11 */
-            RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)  RC(0,5)
-            RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11)
+            RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)  RC(0,5) RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11)
 
-            RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4)  RC(1,5)
-            RC(1,6)  RC(1,7)  RC(1,8)  RC(1,9)  RC(1,10) RC(1,11)
+            RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4)  RC(1,5) RC(1,6)  RC(1,7)  RC(1,8)  RC(1,9)  RC(1,10) RC(1,11)
 
             /* RIGHT MAIN GRID: rows 2-3, cols 0-11 */
-            RC(2,0)  RC(2,1)  RC(2,2)  RC(2,3)  RC(2,4)  RC(2,5)
-            RC(2,6)  RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10) RC(2,11)
+            RC(2,0)  RC(2,1)  RC(2,2)  RC(2,3)  RC(2,4)  RC(2,5) RC(2,6)  RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10) RC(2,11)
 
-            RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)  RC(3,5)
-            RC(3,6)  RC(3,7)  RC(3,8)  RC(3,9)  RC(3,10) RC(3,11)
+            RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)  RC(3,5) RC(3,6)  RC(3,7)  RC(3,8)  RC(3,9)  RC(3,10) RC(3,11)
 
             /* THUMBS / EXTRA per your JSON ordering */
-            RC(4,2)  RC(4,3)
-            RC(4,8)  RC(4,9)
+            RC(4,2)  RC(4,3) RC(4,8)  RC(4,9)
 
-            RC(4,4)  RC(4,5)
-            RC(4,6)  RC(4,7)
+            RC(4,4)  RC(4,5) RC(4,6)  RC(4,7)
 
             RC(5,4)  RC(5,5)
             RC(5,6)  RC(5,7)
