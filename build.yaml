@@ -23,8 +23,8 @@ include:
     shield: hope_left
     snippet: studio-rpc-usb-uart
     cmake-args:
-      -CONFIG_ZMK_STUDIO_LOCKING=y
-      -CONFIG_ZMK_STUDIO=y
+      -DCONFIG_ZMK_STUDIO_LOCKING=y
+      -DCONFIG_ZMK_STUDIO=y
     artifact-name: hope_main
 
   # RIGHT (peripheral): build without Studio
