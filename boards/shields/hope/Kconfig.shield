@@ -1,0 +1,5 @@
+config SHIELD_HOPE_LEFT
+    def_bool $(shields_list_contains,hope_left)
+
+config SHIELD_HOPE_RIGHT
+    def_bool $(shields_list_contains,hope_right)

@@ -1,0 +1,16 @@
+if SHIELD_HOPE_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "manufrom_smart"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_HOPE_LEFT
+
+if SHIELD_HOPE_LEFT || SHIELD_HOPE_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif # SHIELD_HOPE_LEFT || SHIELD_HOPE_RIGHT
