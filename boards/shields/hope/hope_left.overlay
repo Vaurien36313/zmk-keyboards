@@ -1,17 +1,15 @@
 #include "hope.dtsi"
 
 &kscan {
-    /* Rows (inputs) */
-row-gpios = <
-    &gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.20 */
-    &gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.17 */
-    &gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.04 */
-    &gpio0 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.05 */
-    &gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.22 */
-    &gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.24 */
->;
+    row-gpios = <
+        &gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.20 */
+        &gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.17 */
+        &gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.22 */
+        &gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.24 */
+        &gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.09 */
+        &gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) /* P0.10 */
+    >;
 
-    /* Columns (outputs) — LEFT HALF = old columns 0..5 */
     col-gpios = <
         &gpio0 11 GPIO_ACTIVE_HIGH  /* P0.11 */
         &gpio1 0  GPIO_ACTIVE_HIGH  /* P1.00 */
