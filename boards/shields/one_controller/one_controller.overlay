@@ -15,8 +15,8 @@
 
         /* Columns are outputs for col2row */
 col-gpios = <
-    &gpio0 11 GPIO_ACTIVE_HIGH  /* P0.11 */
     &gpio1 0  GPIO_ACTIVE_HIGH  /* P1.00 */
+    &gpio0 11 GPIO_ACTIVE_HIGH  /* P0.11 */
     &gpio1 4  GPIO_ACTIVE_HIGH  /* P1.04 */
     &gpio1 6  GPIO_ACTIVE_HIGH  /* P1.06  (MOVED: was P0.24) */
     &gpio0 29 GPIO_ACTIVE_HIGH  /* P0.29 */
