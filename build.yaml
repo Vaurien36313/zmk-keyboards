@@ -24,7 +24,7 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args:
       -DCONFIG_ZMK_STUDIO_LOCKING=n
-      -DCONFIG_ZMK_STUDIO=y
+      -DCONFIG_ZMK_STUDIO=n
     artifact-name: hope_left_main
 
   # RIGHT (peripheral): build without Studio
