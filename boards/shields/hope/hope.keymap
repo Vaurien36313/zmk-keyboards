@@ -12,25 +12,29 @@
   #include "keys_it.h"
 / {
   behaviors {
-    ht_mo1_none: ht_mo1_none {
+    mo_mo: mo_mo {
       compatible = "zmk,behavior-hold-tap";
-      label = "HT_MO1_NONE";
-      #binding-cells = <0>;
+      label = "MO_MO";
+      #binding-cells = <2>;
 
       flavor = "tap-preferred";
       tapping-term-ms = <200>;
 
-      bindings = <&none &mo 1>;
+      /* tap-behavior, hold-behavior (no args here) */
+      bindings = <&mo &mo>;
     };
 
-    td_mo1_tog1: td_mo1_tog1 {
+    td_mo_tog1: td_mo_tog1 {
       compatible = "zmk,behavior-tap-dance";
-      label = "TD_MO1_TOG1";
+      label = "TD_MO_TOG1";
       #binding-cells = <0>;
 
       tapping-term-ms = <200>;
 
-      bindings = <&ht_mo1_none &tog 1>;
+      bindings = <
+        &mo_mo 1 1   /* single tap or hold -> &mo 1 */
+        &tog 1       /* double tap -> toggle layer 1 */
+      >;
     };
   };
 };
