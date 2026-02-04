@@ -11,21 +11,28 @@
   #include <dt-bindings/zmk/ext_power.h>
   #include "keys_it.h"
 / {
-    behaviors {
-        td_layer1: td_layer1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_LAYER1";
+  behaviors {
+    ht_mo1_none: ht_mo1_none {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HT_MO1_NONE";
+      #binding-cells = <0>;
 
-            #binding-cells = <0>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
 
-            tapping-term-ms = <200>;
-
-            bindings = <
-                &mo 1      /* hold */
-                &tog 1     /* double tap */
-            >;
-        };
+      bindings = <&none>, <&mo 1>;
     };
+
+    td_mo1_tog1: td_mo1_tog1 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TD_MO1_TOG1";
+      #binding-cells = <0>;
+
+      tapping-term-ms = <200>;
+
+      bindings = <&ht_mo1_none>, <&tog 1>;
+    };
+  };
 };
   / {
     keymap {
@@ -39,7 +46,7 @@
 
               &kp C_VOLUME_DOWN &kp C_VOLUME_UP                 &kp C_PLAY_PAUSE &kp C_NEXT 
                       &kp LEFT_GUI &kp BACKSPACE                  &kp SPACE &kp KP_ENTER 
-                      &td_layer1 &kp LEFT_ALT                         &kp LEFT_CONTROL  &kp LEFT_SHIFT 
+                      &td_mo1_tog1 &kp LEFT_ALT                         &kp LEFT_CONTROL  &kp LEFT_SHIFT 
                       &kp LEFT_CONTROL  &kp LEFT_SHIFT            &kp DEL &mo 2
           >;
         };layer1 {
