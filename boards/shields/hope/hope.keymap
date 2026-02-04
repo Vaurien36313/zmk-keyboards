@@ -20,7 +20,7 @@
       flavor = "tap-preferred";
       tapping-term-ms = <200>;
 
-      bindings = <&none>, <&mo 1>;
+      bindings = <&none &mo 1>;
     };
 
     td_mo1_tog1: td_mo1_tog1 {
@@ -30,7 +30,7 @@
 
       tapping-term-ms = <200>;
 
-      bindings = <&ht_mo1_none>, <&tog 1>;
+      bindings = <&ht_mo1_none &tog 1>;
     };
   };
 };
