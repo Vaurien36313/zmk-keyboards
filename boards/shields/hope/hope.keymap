@@ -19,7 +19,7 @@
             bindings = <&kp N1>, <&kp N2>, <&kp N3>;
         };
     };
-{
+
     keymap {
       compatible = "zmk,keymap";
   layer0 {
@@ -65,5 +65,5 @@
             status = "reserved";
         };
     };
-  };
-  
+
+};
