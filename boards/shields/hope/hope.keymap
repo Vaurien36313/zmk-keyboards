@@ -30,6 +30,12 @@
             tapping-term-ms = <200>;
             bindings = <&mo 2 &to 2>;
         };
+        btl: ble_layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp ESCAPE &kp ESCAPE &kp ESCAPE &kp ESCAPE &to 3 >;
+        };
     };
 
     keymap {
@@ -69,8 +75,17 @@
                         &trans &trans                                       &kp KP_N0 &trans 
                         &trans &trans                                       &kp KP_DOT &td0
           >;
-        };extra1 {
-            status = "reserved";
+        };layer3 {
+          bindings = <
+          &td0 &BT_SEL 0 &BT_SEL 1 &BT_SEL 2 &BT_SEL 3 &BT_SEL 4     &trans &trans &trans &trans &BT_CLR  &trans
+          &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+          &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+          &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans 
+                        &trans &trans                                                &trans &trans               
+                               &trans &trans                                  &trans &trans                                   
+                                    &trans &trans                        &trans &trans         
+                                    &trans &trans                        &trans &trans
+          >;
         };
 
         extra2 {
