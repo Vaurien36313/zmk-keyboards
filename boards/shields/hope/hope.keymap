@@ -12,34 +12,55 @@
   #include "keys_it.h"
 / {
     behaviors {
-        // Layer 0 return key: double-tap to lock on layer 0, hold for momentary
-        lt0: layer_tap_0 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
+        // Tap-dance for layer 0: single tap does nothing, double-tap goes to layer 0
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            bindings = <&mo>, <&to>;
+            bindings = <&none>, <&to 0>;
         };
         
-        // Layer 1 switch: hold for momentary, double-tap to lock
+        // Tap-dance for layer 1: single tap does nothing, double-tap toggles layer 1
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&tog 1>;
+        };
+        
+        // Tap-dance for layer 2: single tap does nothing, double-tap toggles layer 2
+        td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&tog 2>;
+        };
+        
+        // Hold-tap for layer 1: hold for momentary, tap triggers tap-dance
         lt1: layer_tap_1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            bindings = <&mo>, <&tog>;
+            bindings = <&mo>, <&td1>;
         };
         
-        // Layer 2 switch: hold for momentary, double-tap to lock
+        // Hold-tap for layer 2: hold for momentary, tap triggers tap-dance
         lt2: layer_tap_2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            bindings = <&mo>, <&tog>;
+            bindings = <&mo>, <&td2>;
+        };
+        
+        // Hold-tap for returning to layer 0: hold for momentary, tap triggers tap-dance
+        lt0: layer_tap_0 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&td0>;
         };
         
         // BLE layer access (keep as tap-dance for multi-tap protection)
@@ -47,7 +68,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp ESC &kp ESC &kp ESC &kp ESC &to 3 >;
+            bindings = <&kp ESC>, <&kp ESC>, <&kp ESC>, <&kp ESC>, <&to 3>;
         };
     };
 
@@ -62,8 +83,8 @@
 
               &kp K_VOL_DN2 &kp K_VOL_UP2                 &kp K_PP &kp K_NEXT 
                       &kp LWIN &kp BSPC                  &kp SPACE &kp RET 
-                      &lt1 1 1 &kp LALT                         &kp LCTRL  &kp LSHFT 
-                      &kp LCTRL  &kp LSHFT            &kp DEL &lt2 2 2
+                      &lt1 1 0 &kp LALT                         &kp LCTRL  &kp LSHFT 
+                      &kp LCTRL  &kp LSHFT            &kp DEL &lt2 2 0
           >;
         };layer1 {
           bindings = <
