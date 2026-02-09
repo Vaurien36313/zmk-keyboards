@@ -16,7 +16,7 @@
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <1000>;
             bindings = <&none>, <&to 0>;
         };
         
@@ -24,7 +24,7 @@
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <1000>;
             bindings = <&none>, <&to 1>;
         };
         
@@ -32,7 +32,7 @@
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <1000>;
             bindings = <&none>, <&to 2>;
         };
         
@@ -41,7 +41,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <1000>;
             bindings = <&mo>, <&td1>;
         };
         
@@ -50,7 +50,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <1000>;
             bindings = <&mo>, <&td2>;
         };
         
@@ -59,7 +59,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <1000>;
             bindings = <&mo>, <&td0>;
         };
         
@@ -67,7 +67,7 @@
         btl: ble_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <1000>;
             bindings = <&kp ESC>, <&kp ESC>, <&kp ESC>, <&kp ESC>, <&to 3>;
         };
     };
