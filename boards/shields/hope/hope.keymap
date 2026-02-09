@@ -16,7 +16,7 @@
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <1000>;
+            C_tapping-term-ms = <200>;
             bindings = <&none>, <&to 0>;
         };
         
@@ -24,7 +24,7 @@
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <1000>;
+            C_tapping-term-ms = <200>;
             bindings = <&none>, <&to 1>;
         };
         
@@ -32,7 +32,7 @@
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <1000>;
+            C_tapping-term-ms = <200>;
             bindings = <&none>, <&to 2>;
         };
         
@@ -41,7 +41,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <1000>;
+            C_tapping-term-ms = <200>;
             bindings = <&mo>, <&td1>;
         };
         
@@ -50,7 +50,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <1000>;
+            C_tapping-term-ms = <200>;
             bindings = <&mo>, <&td2>;
         };
         
@@ -59,7 +59,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <1000>;
+            C_tapping-term-ms = <200>;
             bindings = <&mo>, <&td0>;
         };
         
@@ -83,7 +83,7 @@
                 &kp CAPS &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K &kp L &kp SEMICOLON &kp SQT 
                 &kp TAB  &kp Z &kp X &kp C &kp V &kp B            &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp BSLH 
 
-                &kp K_VOL_DN2 &kp K_VOL_UP2                 &kp K_PP &kp K_NEXT 
+                &kp C_VOL_DN2 &kp C_VOL_UP2                 &kp C_PP &kp C_NEXT 
                 &kp LWIN &kp BSPC                  &kp SPACE &kp RET 
                 &lt1 1 0  &kp LALT                         &kp LCTRL  &kp LSHFT 
                 &kp LCTRL  &kp LSHFT            &kp DEL &lt2 2 0
@@ -96,9 +96,9 @@
                 &kp F12 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                                                              &trans &trans &trans &trans &trans &trans
                 &kp F17 &trans &trans &kp UP &trans &kp F18                                                              &trans &trans &trans &trans &trans &trans 
                 &kp GRAVE &kp PAUSE_BREAK &kp LEFT &kp DOWN &kp RIGHT &trans                                                   &trans &trans &trans &trans &trans &trans 
-                &kp SPACE &kp C_BRI_DN &kp C_BRI_UP &kp K_CALC &kp PSCRN &kp NUBS          &trans &trans &trans &trans &trans &trans 
+                &kp SPACE &kp C_BRI_DN &kp C_BRI_UP &kp C_CALC &kp PSCRN &kp NUBS          &trans &trans &trans &trans &trans &trans 
 
-                &kp K_MUTE &trans                                                                                       &trans &trans 
+                &kp C_MUTE &trans                                                                                       &trans &trans 
                 &trans &kp DELETE                                                                                       &trans &trans 
                 &lt0 0 0  &trans                                                                                   &trans &trans 
                 &trans &trans                                                                                   &trans &trans
@@ -112,7 +112,7 @@
                 &trans &trans &trans &trans &trans &trans     &kp KP_SLASH &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp EQUAL &kp RBKT 
                 &trans &trans &trans &trans &trans &trans     &kp KP_ASTERISK &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp LNLCK &kp SQT 
                 &trans &trans &trans &trans &trans &trans     &kp KP_MINUS &kp KP_N1 &kp KP_N2 &kp KP_N3 &trans &kp BSLH 
-                &trans &trans                                       &kp K_PREV &trans 
+                &trans &trans                                       &kp C_PREV &trans 
                 &trans &trans                                       &kp KP_PLUS &trans 
                 &trans &trans                                       &kp KP_N0 &trans 
                 &trans &trans                                       &kp KP_DOT &lt0 0 0
