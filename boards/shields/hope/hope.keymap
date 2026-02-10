@@ -40,7 +40,7 @@
         lt1: layer_tap_1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <300>;
             bindings = <&mo>, <&td1>;
         };
@@ -49,7 +49,7 @@
         lt2: layer_tap_2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <300>;
             bindings = <&mo>, <&td2>;
         };
@@ -58,7 +58,7 @@
         lt0: layer_tap_0 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <300>;
             bindings = <&mo>, <&td0>;
         };
@@ -68,7 +68,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
-            bindings = <&kp ESC>, <&kp ESC>, <&kp ESC>, <&kp ESC>, <&to 3>;
+            bindings = <&kp ESC>, <&kp ESC>, <&kp ESC>, <&kp ESC>, <&t o 3>;
         };
     };
 
