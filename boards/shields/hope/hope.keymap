@@ -14,7 +14,7 @@
     behaviors {
         TBS: trackball_scroll {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <300>;
             bindings = <&kp LCTRL>, <&kp F13>;
@@ -93,7 +93,7 @@
                 &kp C_VOL_DN &kp C_VOL_UP                 &kp C_PP &kp C_NEXT 
                 &kp LWIN &kp BSPC                  &kp SPACE &kp RET 
                 &lt1 1 0  &kp LALT                         &kp LCTRL  &kp LSHFT 
-                &kp LCTRL  &kp LSHFT            &kp DEL &lt2 2 0
+                &TBS  &kp LSHFT            &kp DEL &lt2 2 0
             >;
         };
         
