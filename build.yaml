@@ -17,8 +17,6 @@
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #     artifact-name: corne_left_with_studio
 #
-env:
-     FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 include:
   # LEFT (central)
   - board: nice_nano_v2
