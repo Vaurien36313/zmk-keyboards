@@ -20,16 +20,13 @@
 env:
      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 include:
-  # LEFT (central): build with Studio over USB
+  # LEFT (central)
   - board: nice_nano_v2
     shield: hope_left
     snippet: studio-rpc-usb-uart
-    cmake-args:
-      -DCONFIG_ZMK_STUDIO_LOCKING=n
-      -DCONFIG_ZMK_STUDIO=n
+    cmake-args: -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_ZMK_STUDIO=n
     artifact-name: hope_left_main
-
-  # RIGHT (peripheral): build without Studio
+  # RIGHT (peripheral)
   - board: nice_nano_v2
     shield: hope_right
     artifact-name: hope_right
