@@ -1,7 +1,7 @@
 if SHIELD_HOPE_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "old_dactyl_manuform"
+    default "dactyl_manuform"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
