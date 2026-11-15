@@ -99,7 +99,7 @@
 
                 &kp C_MUTE &trans                                                                                       &trans &trans 
                 &trans &kp DELETE                                                                                       &trans &trans 
-                &lt0  &trans                                                                                   &trans &trans 
+                &lt0 4 0 &trans                                                                                   &trans &trans 
                 &trans &trans                                                                                   &trans &trans
             >;
         };
@@ -114,14 +114,14 @@
                 &trans &trans                                       &kp C_PREV &trans 
                 &trans &trans                                       &kp KP_PLUS &trans 
                 &trans &trans                                       &kp KP_N0 &trans 
-                &trans &trans                                       &kp KP_DOT &lt0
+                &trans &trans                                       &kp KP_DOT &lt0 4 0
             >;
         };
         
         layer3 {
             label = "BLE";
             bindings = <
-                &to0   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &bt BT_SEL 5 &bt BT_SEL 6 &bt BT_SEL 7 &bt BT_SEL 8  &bt BT_SEL 9 &bt BT_CLR
+                &to 0   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &bt BT_SEL 5 &bt BT_SEL 6 &bt BT_SEL 7 &bt BT_SEL 8  &bt BT_SEL 9 &bt BT_CLR
                 &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &bootloader &kp LCTRL                                   &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL
                 &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL                                   &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL
                 &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL                                   &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL 
@@ -132,8 +132,19 @@
             >;
         };
 
-        extra1 {
-            status = "reserved";
+        layer4 {
+            label = "base_hold";
+            bindings = <
+                &btl &kp N1 &kp N2 &kp N3 &kp N4 &kp N5     &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS 
+                &kp LALT &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I &kp O &kp P &kp LBKT 
+                &kp CAPS &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K &kp L &kp SEMICOLON &kp SQT 
+                &kp TAB  &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp BSLH 
+
+                &kp C_VOL_DN &kp C_VOL_UP                 &kp C_PP &kp C_NEXT 
+                &kp LWIN &kp BSPC                         &kp SPACE &kp RET 
+                &lt1 1 0  &kp LALT                        &kp LCTRL  &kp LSHFT 
+                &kp LCTRL  &kp LSHFT                      &kp DEL &lt2 2 0
+            >;
         };
         extra2 {
             status = "reserved";
