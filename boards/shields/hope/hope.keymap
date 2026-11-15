@@ -65,14 +65,14 @@
             bindings = <&mo>, <&td2>;
         };
         
-        //// Hold-tap for returning to layer 0: hold for momentary, tap triggers tap-dance
-        //lt0: layer_tap_0 {
-        //    compatible = "zmk,behavior-hold-tap";
-        //    #binding-cells = <2>;
-        //    flavor = "hold-preferred";
-        //    tapping-term-ms = <300>;
-        //    bindings =  <&td0>;
-        //};
+        // Hold-tap for returning to layer 0: hold for momentary, tap triggers tap-dance
+        lt0: layer_tap_0 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <300>;
+            bindings =  <&td0>;
+        };
         
         // BLE layer access (keep as tap-dance for multi-tap protection)
         btl: ble_layer {
