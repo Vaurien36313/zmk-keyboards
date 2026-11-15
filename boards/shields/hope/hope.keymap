@@ -22,57 +22,30 @@
         };
     };
     behaviors {
-        // Tap-dance for layer 0: single tap does nothing, double-tap goes to layer 0
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&none>, <&to 0>;
-        };
-        
-        // Tap-dance for layer 1: single tap does nothing, double-tap toggles layer 1
+        // hold: momentary layer 1 | double-tap: go to layer 1
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&none>, <&to 1>;
+            bindings = <&mo 1>, <&to 1>;
         };
-        
-        // Tap-dance for layer 2: single tap does nothing, double-tap toggles layer 2
+
+        // hold: momentary layer 2 | double-tap: go to layer 2
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&none>, <&to 2>;
+            bindings = <&mo 2>, <&to 2>;
         };
-        
-        // Hold-tap for layer 1: hold for momentary, tap triggers tap-dance
-        lt1: layer_tap_1 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
+
+        // hold: base keys (layer 4) | double-tap: back to layer 0
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&mo>, <&td1>;
+            bindings = <&mo 4>, <&to 0>;
         };
-        
-        // Hold-tap for layer 2: hold for momentary, tap triggers tap-dance
-        lt2: layer_tap_2 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <300>;
-            bindings = <&mo>, <&td2>;
-        };
-        
-        // Hold-tap for returning to layer 0: hold for momentary, tap triggers tap-dance
-        lt0: layer_tap_0 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <300>;
-            bindings =  <&mo>, <&td0>;
-        };
-        
+
         // BLE layer access (keep as tap-dance for multi-tap protection)
         btl: ble_layer {
             compatible = "zmk,behavior-tap-dance";
@@ -95,8 +68,8 @@
 
                 &kp C_VOL_DN &kp C_VOL_UP                 &kp C_PP &kp C_NEXT 
                 &kp LWIN &kp BSPC                  &kp SPACE &kp RET 
-                &lt1 1 0  &kp LALT                         &kp LCTRL  &kp LSHFT 
-                &kp LCTRL  &kp LSHFT            &kp DEL &lt2 2 0
+                &td1  &kp LALT                         &kp LCTRL  &kp LSHFT 
+                &kp LCTRL  &kp LSHFT            &kp DEL &td2
             >;
         };
         
@@ -110,7 +83,7 @@
 
                 &kp C_MUTE &trans                                                                                       &trans &trans 
                 &trans &kp DELETE                                                                                       &trans &trans 
-                &lt0 4 0 &trans                                                                                   &trans &trans 
+                &td0 &trans                                                                                   &trans &trans 
                 &trans &trans                                                                                   &trans &trans
             >;
         };
@@ -125,7 +98,7 @@
                 &trans &trans                                       &kp C_PREV &trans 
                 &trans &trans                                       &kp KP_PLUS &trans 
                 &trans &trans                                       &kp KP_N0 &trans 
-                &trans &trans                                       &kp KP_DOT &lt0 4 0
+                &trans &trans                                       &kp KP_DOT &td0
             >;
         };
         
@@ -153,8 +126,8 @@
 
                 &kp C_VOL_DN &kp C_VOL_UP                 &kp C_PP &kp C_NEXT 
                 &kp LWIN &kp BSPC                         &kp SPACE &kp RET 
-                &lt1 1 0  &kp LALT                        &kp LCTRL  &kp LSHFT 
-                &kp LCTRL  &kp LSHFT                      &kp DEL &lt2 2 0
+                &td1  &kp LALT                        &kp LCTRL  &kp LSHFT 
+                &kp LCTRL  &kp LSHFT                      &kp DEL &td2
             >;
         };
         extra2 {
