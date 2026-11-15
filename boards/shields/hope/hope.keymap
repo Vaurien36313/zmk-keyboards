@@ -53,14 +53,14 @@
             bindings = <&mo>, <&td2>;
         };
         
-        //// Hold-tap for returning to layer 0: hold for momentary, tap triggers tap-dance
-        //lt0: layer_tap_0 {
-        //    compatible = "zmk,behavior-hold-tap";
-        //    #binding-cells = <2>;
-        //    flavor = "hold-preferred";
-        //    tapping-term-ms = <300>;
-        //    bindings =  <&mo>, <&td0>;
-        //};
+        // Hold-tap for returning to layer 0: hold for momentary, tap triggers tap-dance
+        lt0: layer_tap_0 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <300>;
+            bindings =  <&mo>, <&td0>;
+        };
         
         // BLE layer access (keep as tap-dance for multi-tap protection)
         btl: ble_layer {
@@ -99,7 +99,7 @@
 
                 &kp C_MUTE &trans                                                                                       &trans &trans 
                 &trans &kp DELETE                                                                                       &trans &trans 
-                &td0  &trans                                                                                   &trans &trans 
+                &lt0  &trans                                                                                   &trans &trans 
                 &trans &trans                                                                                   &trans &trans
             >;
         };
@@ -114,14 +114,14 @@
                 &trans &trans                                       &kp C_PREV &trans 
                 &trans &trans                                       &kp KP_PLUS &trans 
                 &trans &trans                                       &kp KP_N0 &trans 
-                &trans &trans                                       &kp KP_DOT &td0
+                &trans &trans                                       &kp KP_DOT &lt0
             >;
         };
         
         layer3 {
             label = "BLE";
             bindings = <
-                &td0   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &bt BT_SEL 5 &bt BT_SEL 6 &bt BT_SEL 7 &bt BT_SEL 8  &bt BT_SEL 9 &bt BT_CLR
+                &to0   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &bt BT_SEL 5 &bt BT_SEL 6 &bt BT_SEL 7 &bt BT_SEL 8  &bt BT_SEL 9 &bt BT_CLR
                 &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &bootloader &kp LCTRL                                   &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL
                 &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL                                   &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL
                 &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL                                   &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL &kp LCTRL 
