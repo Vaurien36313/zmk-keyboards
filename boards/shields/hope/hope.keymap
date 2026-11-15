@@ -8,10 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include "keys_it.h"
-
 / {
-    
-};
+
     behaviors {
         // Tap-dance for layer 0: single tap does nothing, double-tap goes to layer 0
         td0: tap_dance_0 {
