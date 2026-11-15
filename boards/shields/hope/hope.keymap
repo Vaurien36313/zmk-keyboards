@@ -7,20 +7,10 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include "keys_it.h"
 
 / {
-    macros {
-    shutdown_popup: shutdown_popup {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings
-            = <&macro_tap &kp LG(D)>      // Win+D to show desktop
-            , <&macro_wait_time 1500>    // Wait 200ms
-            , <&macro_tap &kp LA(F4)>      // Alt+F4
-            ;
-    };
+    
 };
     behaviors {
         // Tap-dance for layer 0: single tap does nothing, double-tap goes to layer 0
@@ -65,14 +55,14 @@
             bindings = <&mo>, <&td2>;
         };
         
-        // Hold-tap for returning to layer 0: hold for momentary, tap triggers tap-dance
-        lt0: layer_tap_0 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <300>;
-            bindings =  <&td0>;
-        };
+        //// Hold-tap for returning to layer 0: hold for momentary, tap triggers tap-dance
+        //lt0: layer_tap_0 {
+        //    compatible = "zmk,behavior-hold-tap";
+        //    #binding-cells = <2>;
+        //    flavor = "hold-preferred";
+        //    tapping-term-ms = <300>;
+        //    bindings =  <&mo>, <&td0>;
+        //};
         
         // BLE layer access (keep as tap-dance for multi-tap protection)
         btl: ble_layer {
@@ -111,7 +101,7 @@
 
                 &kp C_MUTE &trans                                                                                       &trans &trans 
                 &trans &kp DELETE                                                                                       &trans &trans 
-                &lt0 0 0  &trans                                                                                   &trans &trans 
+                &td0  &trans                                                                                   &trans &trans 
                 &trans &trans                                                                                   &trans &trans
             >;
         };
@@ -126,7 +116,7 @@
                 &trans &trans                                       &kp C_PREV &trans 
                 &trans &trans                                       &kp KP_PLUS &trans 
                 &trans &trans                                       &kp KP_N0 &trans 
-                &trans &trans                                       &kp KP_DOT &lt0 0 0
+                &trans &trans                                       &kp KP_DOT &td0
             >;
         };
         
